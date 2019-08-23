@@ -1,0 +1,17 @@
+<!-- <input  (change)="fileChange($event)"  type="file"  class="custom-file-input"  id="inputGroupFile01"  aria-describedby="inputGroupFileAddon01">
+<span  class="input-group-text upload"  (click)="upload($event)"  id="btnUpload">Upload</span> -->
+<h1>Upload file</h1>
+<form [formGroup] = "formGroup" (ngSubmit)="onSubmit()">
+ <input type="file" (change)="onFileChange($event)" />
+ <input type="submit" [disabled]="formGroup.invalid" value="upload" />
+</form>
+
+
+<ol>
+    <li *ngFor = "let file of uploadedFiles">
+        {{ file }}
+        <input type="button" class="button" value="Download" (click)="downloadFile(file)">
+        <input type="button" class="button button3" value="Remove" (click)="deleteFile(file)">
+    </li>
+</ol>
+

@@ -58,7 +58,7 @@ export class AppComponent implements OnInit {
     }
 
     public getFileList() {
-       this.http.get('http://localhost:3000/api/listFile').subscribe(
+       this.http.get('https://file-upload-node-1.herokuapp.com/api/listFile').subscribe(
         (res) => {
           this.uploadedFiles = res.json();
         }
